@@ -40,8 +40,8 @@ public class UserController {
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
             return Result.error(Constants.CODE_400, "参数错误");
         }
-//        UserDTO dto = userService.login(userDTO);
-        return Result.success();
+        UserDTO dto = userService.login(userDTO);
+        return Result.success(dto);
     }
 
     // 新增或者更新

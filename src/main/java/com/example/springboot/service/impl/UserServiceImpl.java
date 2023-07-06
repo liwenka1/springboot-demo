@@ -11,12 +11,9 @@ import com.example.springboot.mapper.UserMapper;
 import com.example.springboot.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.springboot.utils.TokenUtils;
-import jdk.nashorn.internal.parser.Token;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.awt.*;
-import java.util.List;
 
 /**
  * <p>
@@ -43,7 +40,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 //    private IMenuService menuService;
 
     @Override
-    public boolean login(UserDTO userDTO) {
+    public UserDTO login(UserDTO userDTO) {
         // 用户密码 md5加密
         userDTO.setPassword(SecureUtil.md5(userDTO.getPassword()));
         User one = getUserInfo(userDTO);
@@ -52,12 +49,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             // 设置token
             String token = TokenUtils.genToken(one.getId().toString(), one.getPassword());
             userDTO.setToken(token);
-
-            // 设置用户的菜单列表
-            String role = one.getRole();
-//            List<Menu> roleMenus = getRoleMenus(role);
+            return userDTO;
+        }else {
+            throw new ServiceException(Constants.CODE_600, "用户名或密码错误");
         }
-        return true;
     }
 
 //    private List<Menu> getRoleMenus(String roleFlag) {

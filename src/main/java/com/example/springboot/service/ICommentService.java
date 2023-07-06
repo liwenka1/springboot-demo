@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author 李文凯
- * @since 2023-07-03
+ * @since 2023-07-06
  */
 public interface ICommentService extends IService<Comment> {
 
