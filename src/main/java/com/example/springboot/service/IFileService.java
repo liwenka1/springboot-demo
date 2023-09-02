@@ -1,7 +1,7 @@
 package com.example.springboot.service;
 
-import com.example.springboot.entity.File;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.springboot.entity.Files;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author 李文凯
  * @since 2023-07-03
  */
-public interface IFileService extends IService<File> {
+public interface IFileService extends IService<Files> {
 
 }

@@ -1,7 +1,7 @@
 package com.example.springboot.mapper;
 
-import com.example.springboot.entity.File;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.springboot.entity.Files;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author 李文凯
  * @since 2023-07-03
  */
-public interface FileMapper extends BaseMapper<File> {
+public interface FileMapper extends BaseMapper<Files> {
 
 }
